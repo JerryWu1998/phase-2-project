@@ -1,0 +1,256 @@
+{
+  "quiz": [
+    {
+      "id": 1,
+      "question": "Choose one to continue",
+      "optionA": {
+        "text": "Dawn",
+        "points": [ 100, 100, 0, 0]
+      },
+      "optionB": {
+        "text": "Dusk",
+        "points": [ 0, 0, 100, 100]
+      }
+    }
+
+    ,{
+      "id": 2,
+      "question": "Pick one",
+      "optionA": {
+        "text": "Forest",
+        "points": [ 100, 100, 0, 0]
+      },
+      "optionB": {
+        "text": "River",
+        "points": [ 100, 100, 0, 0]
+      }
+    }
+
+    ,{
+      "id": 3,
+      "question": "Pick one",
+      "optionA": {
+        "text": "Moon",
+        "points": [ 0, 100, 0, 100]
+      },
+      "optionB": {
+        "text": "Stars",
+        "points": [ 100, 0, 100, 0]
+      }
+    }
+
+    ,{
+      "id": 4,
+      "question": "Four boxes are placed before you. Which would you try and open?",
+      "optionA": {
+        "text": "The small tortoiseshell box",
+        "points": [ 0, 0, 100, 0]
+      },
+      "optionB": {
+        "text": "The gleaming jet black box",
+        "points": [ 0, 0, 0, 100]
+      },
+      "optionC": {
+        "text": "The ornate golden casket",
+        "points": [ 0, 100, 0, 0]
+      },
+      "optionD": {
+        "text": "The small pewter box",
+        "points": [ 100, 0, 0, 0]
+      }
+    }
+
+    ,{
+      "id": 5,
+      "question": "You and two friends need to cross a bridge guarded by a river troll who insists on fighting one of you before he will let all of you pass. What do you do?",
+      "optionA": {
+        "text": "Attempt to confuse the troll",
+        "points": [ 0, 100, 0, 0]
+      },
+      "optionB": {
+        "text": "Suggest drawing lots",
+        "points": [ 0, 0, 100, 0]
+      },
+      "optionC": {
+        "text": "Suggest that all three of you should fight",
+        "points": [ 0, 0, 0, 100]
+      },
+      "optionD": {
+        "text": "Volunteer to fight",
+        "points": [ 100, 0, 0, 0]
+      }
+    }
+
+    ,{
+      "id": 6,
+      "question": "Once every century, the Flutterby bush produces flowers that adapt their scent to attract the unwary. If it lured you, it would smell of:",
+      "optionA": {
+        "text": "A crackling log fire",
+        "points": [ 100, 0, 0, 0]
+      },
+      "optionB": {
+        "text": "The sea",
+        "points": [ 0, 0, 0, 100]
+      },
+      "optionC": {
+        "text": "Fresh parchment",
+        "points": [ 0, 100, 0, 0]
+      },
+      "optionD": {
+        "text": "Home",
+        "points": [ 0, 0, 100, 0]
+      }
+    }
+
+    ,{
+      "id": 7,
+      "question": "One of your housemates has cheated on an exam and taken your place as top of the class. Your professor is supicious and asks you whether or not your classmate cheated. What do you do?",
+      "optionA": {
+        "text": "Lie and say you don't know",
+        "points": [ 0, 0, 100, 0]
+      },
+      "optionB": {
+        "text": "tell the professor that he ought to ask your classmate",
+        "points": [ 100, 0, 0, 0]
+      },
+      "optionC": {
+        "text": "Tell the professor the truth",
+        "points": [ 0, 100, 0, 0]
+      },
+      "optionD": {
+        "text": "You would not wait to be asked to tell the professor the truth",
+        "points": [ 0, 0, 0, 100]
+      }
+    }
+
+   , {
+      "id": 8,
+      "question": "Which of the following do you find most difficult to deal with?",
+      "optionA": {
+        "text": "Hunger",
+        "points": [ 0, 100, 100, 0]
+      },
+      "optionB": {
+        "text": "Cold",
+        "points": [ 0, 0, 100, 100]
+      },
+      "optionC": {
+        "text": "Loneliness",
+        "points": [ 100, 0, 100, 0]
+      },
+      "optionD": {
+        "text": "Boredom",
+        "points": [ 100, 0, 0, 100]
+      },
+      "optionE": {
+        "text": "Being ignored",
+        "points": [ 0, 100, 0, 100]
+    }
+     }
+
+     ,{
+      "id": 9,
+      "question": "You enter an enchanted garden. What would you be most curious to examine first?",
+      "optionA": {
+        "text": "The silver leafed tree bearing golden apples",
+        "points": [ 0, 100, 0, 0]
+      },
+      "optionB": {
+        "text": "The fat red toadstools",
+        "points": [ 0, 0, 100, 0]
+      },
+      "optionC": {
+        "text": "he bubbling pool",        
+        "points": [ 0, 0, 0, 100]
+      },
+      "optionD": {
+        "text": "he statue of an old wizard with a strangely twinkling eye",        
+        "points": [ 100, 0, 0, 0]
+      }
+    }
+
+    ,{
+      "id": 10,
+      "question": "Four goblets are placed before you. Which would you choose to drink?",
+      "optionA": {
+        "text": "The foaming, frothing, silvery liquid",
+        "points": [ 0, 100, 0, 0]
+      },
+      "optionB": {
+        "text": "The smooth, thick, richly purple drink",
+        "points": [ 0, 0, 100, 0]
+      },
+      "optionC": {
+        "text": "The golden liquid so bright that it hurts the eye",
+        "points": [ 100, 0, 0, 0]
+      },
+      "optionD": {
+        "text": "The mysterious black liquid that gleams like ink",
+        "points": [ 0, 0, 0, 100]
+      }
+    }
+
+    ,{
+      "id": 11,
+      "question": "What kind of instrument most pleases your ear?",
+      "optionA": {
+        "text": "The violin",
+        "points": [ 0, 0, 0, 100]
+      },
+      "optionB": {
+        "text": "The trumpet",
+        "points": [ 0, 0, 100, 0]
+      },
+      "optionC": {
+        "text": "The piano",
+        "points": [ 0, 100, 0, 0]
+      },
+      "text": "The drum",
+      "points": [ 100, 0, 0, 0]
+      
+    }
+
+    ,{
+      "id": 12,
+      "question": "How would you like to be known in history?",
+      "optionA": {
+        "text": "The Wise",
+        "points": [ 0, 100, 0, 0]
+      },
+      "optionB": {
+        "text": "The Good",
+        "points": [ 0, 0, 100, 0]
+      },
+      "optionC": {
+        "text": "The Great",
+        "points": [ 0, 0, 0, 100]
+      },
+      "text": "The Bold",
+      "points": [ 100, 0, 0, 0]
+    }
+    
+  ],
+
+  "users": [
+    {
+      "username": "Jerry",
+      "password": "123456",
+      "house": "",
+      "wand": ""
+    },
+    
+    {
+      "username": "Will",
+      "password": "654321",
+      "house": "",
+      "wand": ""
+    },
+
+    {
+      "username": "Ammar",
+      "password": "abcdef",
+      "house": "",
+      "wand": ""
+    }
+  ]
+}
