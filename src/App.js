@@ -1,4 +1,3 @@
-// App.js
 import React, { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Switch, Route, Redirect } from 'react-router-dom';
 import Login from './components/Login';
@@ -14,9 +13,9 @@ function App() {
     }
   }, []);
 
-  const handleLogin = (dataUsername, dataPassword, dataHouse, dataWand) => {
-    // Verify username and password here
+  const handleLogin = (dataUsername, dataPassword, dataHouse, dataWand, dataId) => {
     const userData = {
+      id: dataId,
       username: dataUsername,
       password: dataPassword,
       house: dataHouse,
@@ -25,25 +24,28 @@ function App() {
     setUser(userData);
     localStorage.setItem('user', JSON.stringify(userData));
   };
+  
 
   const handleLogout = () => {
     setUser(null);
     localStorage.removeItem('user');
   };
 
+  const handleUpdateHouse = (house) => {
+    const updatedUser = { ...user, house };
+    localStorage.setItem('user', JSON.stringify(updatedUser));
+    setUser(updatedUser);
+  };
+
   return (
     <Router>
       <Switch>
         <Route path="/login">
-          {user ? (
-            <Redirect to={`/profile/${user.username}`} />
-          ) : (
-            <Login onLogin={handleLogin} />
-          )}
+          {user ? <Redirect to={`/profile/${user.username}`} /> : <Login onLogin={handleLogin} />}
         </Route>
         <Route path="/profile/:username">
           {user ? (
-            <Profile user={user} onLogout={handleLogout} />
+            <Profile user={user} onLogout={handleLogout} onUpdateHouse={handleUpdateHouse} />
           ) : (
             <Redirect to="/login" />
           )}
