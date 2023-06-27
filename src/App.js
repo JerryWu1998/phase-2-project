@@ -6,12 +6,12 @@ import Profile from './components/Profile';
 function App() {
   const [user, setUser] = useState(null);
 
-  useEffect(() => {
-    const storedUser = localStorage.getItem('user');
-    if (storedUser) {
-      setUser(JSON.parse(storedUser));
-    }
-  }, []);
+  // useEffect(() => {
+  //   const storedUser = localStorage.getItem('user');
+  //   if (storedUser) {
+  //     setUser(JSON.parse(storedUser));
+  //   }
+  // }, []);
 
   const handleLogin = (dataUsername, dataPassword, dataHouse, dataWand, dataId) => {
     const userData = {
@@ -22,18 +22,18 @@ function App() {
       wand: dataWand
     };
     setUser(userData);
-    localStorage.setItem('user', JSON.stringify(userData));
+    // localStorage.setItem('user', JSON.stringify(userData));
   };
   
 
   const handleLogout = () => {
     setUser(null);
-    localStorage.removeItem('user');
+    // localStorage.removeItem('user');
   };
 
   const handleUpdateHouse = (house) => {
     const updatedUser = { ...user, house };
-    localStorage.setItem('user', JSON.stringify(updatedUser));
+    // localStorage.setItem('user', JSON.stringify(updatedUser));
     setUser(updatedUser);
   };
 
