@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 
 function BuildWand() {
-  const [wandLength, setWandLength] = useState('');
-  const [wandWood, setWandWood] = useState('');
-  const [wandCore, setWandCore] = useState('');
+  const [wandLength, setWandLength] = useState(10);
+  const [wandWood, setWandWood] = useState('wood1');
+  const [wandCore, setWandCore] = useState('core1');
 
   const handleLengthChange = (event) => {
     setWandLength(event.target.value);
@@ -19,34 +19,33 @@ function BuildWand() {
 
   const handleSubmit = (event) => {
     event.preventDefault();
+    console.log(wandLength, wandWood, wandCore);
 
-    // Process the wand data here
-    console.log('Wand Length:', wandLength);
-    console.log('Wand Wood:', wandWood);
-    console.log('Wand Core:', wandCore);
 
-    // Reset the form
-    setWandLength('');
-    setWandWood('');
-    setWandCore('');
   };
 
   return (
     <div>
       <h1>Build Your Wand</h1>
       <form onSubmit={handleSubmit}>
-        <label>
-          Wand Length:
-          <input type="text" value={wandLength} onChange={handleLengthChange} />
-        </label>
-        <label>
-          Wand Wood:
-          <input type="text" value={wandWood} onChange={handleWoodChange} />
-        </label>
-        <label>
-          Wand Core:
-          <input type="text" value={wandCore} onChange={handleCoreChange} />
-        </label>
+        <p>Wand Length:</p>
+        <select name="length" onChange={handleLengthChange} value={wandLength}>
+          <option value={10}>10 inches</option>
+          <option value={11}>11 inches</option>
+          <option value={12}>12 inches</option>
+        </select>
+        <p>Wand Wood:</p>
+        <select name="wood" onChange={handleWoodChange} value={wandWood}>
+          <option value="wood1">wood1</option>
+          <option value="wood2">wood2</option>
+          <option value="wood3">wood3</option>
+        </select>
+        <p>Wand Core:</p>
+        <select name="core" onChange={handleCoreChange} value={wandCore}>
+          <option value="core1">core1</option>
+          <option value="core2">core2</option>
+          <option value="core3">core3</option>
+        </select>
         <button type="submit">Create Wand</button>
       </form>
     </div>

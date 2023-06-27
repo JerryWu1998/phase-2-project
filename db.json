@@ -437,22 +437,45 @@
       "id": 1,
       "username": "Jerry",
       "password": "123456",
-      "house": "Gryffindor",
-      "wand": ""
+      "house": "Ravenclaw",
+      "wand": "",
+      "comments": [
+        "123",
+        "456"
+      ]
     },
     {
       "id": 2,
       "username": "Will",
       "password": "654321",
-      "house": "",
-      "wand": ""
+      "house": "Gryffindor",
+      "wand": "",
+      "comments": [
+        "cat",
+        "dog"
+      ]
     },
     {
       "id": 3,
       "username": "Ammar",
       "password": "abcdef",
-      "house": "",
-      "wand": ""
+      "house": "Slytherin",
+      "wand": "",
+      "comments": [
+        "apple",
+        "orange"
+      ]
+    },
+    {
+      "id": 4,
+      "username": "asd",
+      "password": "asd",
+      "house": "Ravenclaw",
+      "wand": "",
+      "comments": [
+        "abc",
+        "def"
+      ]
     }
   ]
 }

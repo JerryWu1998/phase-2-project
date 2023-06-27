@@ -50,7 +50,9 @@ function Profile({ user, onLogout, onUpdateHouse }) {
           <SortingQuiz user={user} onUpdateHouse={onUpdateHouse} />
         </Route>
         <Route path={`${path}/build-wand`} component={BuildWand} />
-        <Route path={`${path}/virtual-great-hall`} component={VirtualGreatHall} />
+        <Route path={`${path}/virtual-great-hall`}>
+          <VirtualGreatHall user={user} />
+        </Route>
       </Switch>
     </div>
   );

@@ -37,12 +37,7 @@ const Quiz = ({ questions, user, onUpdateHouse }) => {
       },
       body: JSON.stringify({ ...user, house })
     })
-      .then(response => {
-        if (!response.ok) {
-          throw new Error('Network response was not ok');
-        }
-        return response.json();
-      })
+      .then(response => response.json())
       .then(data => {
         onUpdateHouse(house);
         alert(`You are in ${house}!`);

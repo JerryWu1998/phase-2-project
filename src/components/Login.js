@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-const Login = ({ onLogin, onSignup }) => {
+const Login = ({ onLogin }) => {
   const [loginUsername, setLoginUsername] = useState('');
   const [loginPassword, setLoginPassword] = useState('');
   const [signupUsername, setSignupUsername] = useState('');
@@ -23,6 +23,7 @@ const Login = ({ onLogin, onSignup }) => {
     setSignupPassword(event.target.value);
   };
 
+  // Login function
   const handleLogin = async (event) => {
     event.preventDefault();
 
@@ -30,46 +31,68 @@ const Login = ({ onLogin, onSignup }) => {
       const response = await fetch('http://localhost:3000/users');
       if (response.ok) {
         const data = await response.json();
-        const user = data.find(
-          (user) => user.username === loginUsername && user.password === loginPassword
+        const user = data.find((user) =>
+          user.username === loginUsername && user.password === loginPassword
         );
-
         if (user) {
-          onLogin(user.username, user.password, user.house, user.wand, user.id);
+          onLogin(user.username, user.password, user.house, user.wand, user.comments, user.id);
         } else {
           setError('Invalid username or password');
         }
-      } else {
-        setError('Error occurred during login');
       }
     } catch (error) {
       setError('Error occurred during login');
     }
   };
 
-  const handleSignup = async (event) => {
-    event.preventDefault();
-
+  // To get all existing usernames
+  const fetchUsernames = async () => {
     try {
-      const response = await fetch('http://localhost:3000/users', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-          username: signupUsername,
-          password: signupPassword,
-        }),
-      });
-
+      const response = await fetch('http://localhost:3000/users');
       if (response.ok) {
         const data = await response.json();
-        onSignup(data.username, data.password, data.house, data.wand);
+        const existingUsernames = data.map((user) => user.username);
+        return existingUsernames;
       } else {
-        setError('Error occurred during signup');
+        throw new Error('Error retrieving usernames');
       }
     } catch (error) {
-      setError('Error occurred during signup');
+      throw new Error('Error retrieving usernames');
+    }
+  };
+
+  // Sign up funciton
+  const handleSignup = async (event) => {
+    event.preventDefault();
+    const existingUsernames = await fetchUsernames();
+
+    if (existingUsernames.includes(signupUsername)) {
+      setError('Username already taken');
+    } else {
+      try {
+        const response = await fetch('http://localhost:3000/users', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({
+            username: signupUsername,
+            password: signupPassword,
+            house: "",
+            wand: "",
+            comments: []
+          }),
+        });
+
+        if (response.ok) {
+          setError('')
+          window.alert("Sign Up successfully!")
+          setSignupUsername('')
+          setSignupPassword('')
+        }
+      } catch (error) {
+        setError('Error occurred during signup');
+      }
     }
   };
 
@@ -114,3 +137,6 @@ const Login = ({ onLogin, onSignup }) => {
 };
 
 export default Login;
+
+
+
