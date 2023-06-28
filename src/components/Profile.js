@@ -4,7 +4,8 @@ import SortingQuiz from './SortingQuiz';
 import BuildWand from './BuildWand';
 import VirtualGreatHall from './VirtualGreatHall';
 
-function Profile({ user, onLogout, onUpdateHouse }) {
+function Profile({ user, onLogout, onUpdateHouse, onUpdateWand }) {
+  
   const history = useHistory();
   const { path, url } = useRouteMatch();
 
@@ -49,7 +50,9 @@ function Profile({ user, onLogout, onUpdateHouse }) {
         <Route path={`${path}/sorting-quiz`}>
           <SortingQuiz user={user} onUpdateHouse={onUpdateHouse} />
         </Route>
-        <Route path={`${path}/build-wand`} component={BuildWand} />
+        <Route path={`${path}/build-wand`}>
+          <BuildWand user={user} onUpdateWand={onUpdateWand} />
+        </Route>
         <Route path={`${path}/virtual-great-hall`}>
           <VirtualGreatHall user={user} />
         </Route>

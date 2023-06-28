@@ -42,29 +42,58 @@ const Quiz = ({ questions, user, onUpdateHouse }) => {
         onUpdateHouse(house);
         alert(`You are in ${house}!`);
         // Reset answers to empty array
-        setAnswers(Array(questions.length).fill([0, 0, 0, 0])); 
+        setAnswers(Array(questions.length).fill([0, 0, 0, 0]));
         // Redirect to profile page
-        history.push(`/profile/${user.username}`); 
+        history.push(`/profile/${user.username}`);
       })
       .catch(error => {
         console.error('There has been a problem with your fetch operation:', error);
       });
   };
 
+  function changeIntToLetter(int) {
+    if (int === 1) {
+      return "One"
+    } else if (int === 2) {
+      return "Two"
+    } else if (int === 3) {
+      return "Three"
+    } else if (int === 4) {
+      return "Four"
+    } else if (int === 5) {
+      return "Five"
+    } else if (int === 6) {
+      return "Six"
+    } else if (int === 7) {
+      return "Seven"
+    } else if (int === 8) {
+      return "Eight"
+    } else if (int === 9) {
+      return "Nine"
+    } else if (int === 10) {
+      return "Ten"
+    } else if (int === 11) {
+      return "Eleven"
+    } else if (int === 12) {
+      return "Twelve"
+    } else {
+    }
+  }
+
   return (
-    <div>
-      <h1>Quiz</h1>
+    <div id="quizJS">
+      <h1>Sorting Quiz</h1>
       {questions.map((question, index) => (
         <div key={question.id}>
-          <h2>Question {index + 1}</h2>
+          <h2>Question {changeIntToLetter(index + 1)}</h2>
           <p>{question.question}</p>
           {Object.keys(question).filter(key => key.startsWith('option')).map(optionKey => {
             const option = question[optionKey];
             return (
-              <div key={optionKey}>
-                <input 
-                  type="radio" 
-                  name={`question-${question.id}`} 
+              <div key={optionKey} className='quiz-options'>
+                <input
+                  type="radio"
+                  name={`question-${question.id}`}
                   onChange={() => handleOptionChange(index, option.points)}
                 />
                 <label>{option.text}</label>

@@ -438,7 +438,7 @@
       "username": "Jerry",
       "password": "123456",
       "house": "Ravenclaw",
-      "wand": "",
+      "wand": [],
       "comments": [
         "123",
         "456"
@@ -449,7 +449,7 @@
       "username": "Will",
       "password": "654321",
       "house": "Gryffindor",
-      "wand": "",
+      "wand": [],
       "comments": [
         "cat",
         "dog"
@@ -460,7 +460,7 @@
       "username": "Ammar",
       "password": "abcdef",
       "house": "Slytherin",
-      "wand": "",
+      "wand": [],
       "comments": [
         "apple",
         "orange"
@@ -471,10 +471,44 @@
       "username": "asd",
       "password": "asd",
       "house": "Ravenclaw",
-      "wand": "",
+      "wand": [],
       "comments": [
         "abc",
         "def"
+      ]
+    },
+    {
+      "id": 5,
+      "username": "zxc",
+      "password": "zxc",
+      "house": "Gryffindor",
+      "wand": [
+        "10 inches, ",
+        "Ash wood, ",
+        "Dragon Heartstring core "
+      ],
+      "comments": []
+    }
+  ],
+  "images": [
+    {
+      "backgroundImages": [
+        "https://cdna.artstation.com/p/assets/images/images/056/271/808/large/favorisxp-foiwnmlxway769s.jpg?1668845562",
+        "",
+        "",
+        "",
+        ""
+      ],
+      "wandImages": [
+        "",
+        "",
+        ""
+      ],
+      "houseIcons": [
+        "",
+        "",
+        "",
+        ""
       ]
     }
   ]

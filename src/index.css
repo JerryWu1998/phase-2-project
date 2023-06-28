@@ -1,13 +1,100 @@
 body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  background-image: url('https://images-ext-2.discordapp.net/external/As7dB_h3zjFkZJXu-3pRYojn0XtKyjHfz69WBI6FHxw/%3F1668845562/https/cdna.artstation.com/p/assets/images/images/056/271/808/large/favorisxp-foiwnmlxway769s.jpg?width=1664&height=936');
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+h1 {
+  font-family: 'Harry Potter', sans-serif;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  letter-spacing: 4px;
+  margin-bottom: 10px;
+  text-transform: uppercase;
+  text-align: center;
+  color: #333333c4;
+}
+
+h1::first-letter {
+  font-size: 1.5em; /* Adjust the size as needed */
+}
+
+h1::first-line {
+  font-size: 1em; /* Adjust the size as needed */
+}
+
+h2 {
+  font-family: 'Harry Potter', sans-serif;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  font-weight: 400;
+  letter-spacing: 1.5px;
+  line-height: 1.5;
+  text-transform: capitalize;
+  color: #333333c4;
+  margin-bottom: 10px;
+}
+
+h2::first-letter {
+  font-size: 1em; /* Adjust the size as needed */
+}
+
+h2::first-line {
+  font-size: 1em; /* Adjust the size as needed */
+}
+
+h3 {
+  font-family: 'SPQR', sans-serif;
+  font-weight: 700;
+  line-height: 1.5;
+  color: #000000;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+
+p {
+  font-family: 'SPQR', sans-serif;
+  font-size: 14px;
+  font-weight: 300;
+  line-height: 1.5;
+  color: #000000;
+  margin-bottom: 10px;
+}
+
+p::first-letter {
+  font-size: 1.5em; /* Adjust the size as needed */
+}
+p::first-line {
+  font-size: 1em; /* Adjust the size as needed */
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.form input {
+  margin-bottom: 10px;
+}
+
+#quizJS {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+}
+
+.quiz-options {
+  font-family: 'SPQR', sans-serif;
+  font-size: 14px;
+  font-weight: 300;
+  line-height: 1.5;
+  color: #000000;
+  margin-bottom: 10px;
+  margin-right: 10px;
+}
+
+
+#loginJS {
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  height: 75vh;
 }

@@ -5,6 +5,7 @@ import Profile from './components/Profile';
 
 function App() {
   const [user, setUser] = useState(null);
+  
 
   useEffect(() => {
     const storedUser = localStorage.getItem('user');
@@ -38,6 +39,12 @@ function App() {
     setUser(updatedUser);
   };
 
+  const handleUpdateWand = (wand) => {
+    const updatedUser = { ...user, wand };
+    localStorage.setItem('user', JSON.stringify(updatedUser));
+    setUser(updatedUser);
+  };
+
   return (
     <Router>
       <Switch>
@@ -46,7 +53,11 @@ function App() {
         </Route>
         <Route path="/profile/:username">
           {user ? (
-            <Profile user={user} onLogout={handleLogout} onUpdateHouse={handleUpdateHouse} />
+            <Profile
+              user={user}
+              onLogout={handleLogout}
+              onUpdateHouse={handleUpdateHouse}
+              onUpdateWand={handleUpdateWand} />
           ) : (
             <Redirect to="/login" />
           )}

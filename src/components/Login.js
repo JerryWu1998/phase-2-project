@@ -6,6 +6,7 @@ const Login = ({ onLogin }) => {
   const [signupUsername, setSignupUsername] = useState('');
   const [signupPassword, setSignupPassword] = useState('');
   const [error, setError] = useState('');
+  const [isSignupMode, setIsSignupMode] = useState(true); // State variable for signup mode
 
   const handleLoginUsernameChange = (event) => {
     setLoginUsername(event.target.value);
@@ -21,6 +22,11 @@ const Login = ({ onLogin }) => {
 
   const handleSignupPasswordChange = (event) => {
     setSignupPassword(event.target.value);
+  };
+
+  const handleModeToggle = () => {
+    setIsSignupMode(!isSignupMode);
+    setError('');
   };
 
   // Login function
@@ -79,7 +85,7 @@ const Login = ({ onLogin }) => {
             username: signupUsername,
             password: signupPassword,
             house: "",
-            wand: "",
+            wand: [],
             comments: []
           }),
         });
@@ -97,46 +103,59 @@ const Login = ({ onLogin }) => {
   };
 
   return (
-    <div>
-      <h2>Login</h2>
-      {error && <p>{error}</p>}
-      <form onSubmit={handleLogin}>
-        <input
-          type="text"
-          placeholder="Username"
-          value={loginUsername}
-          onChange={handleLoginUsernameChange}
-        />
-        <input
-          type="password"
-          placeholder="Password"
-          value={loginPassword}
-          onChange={handleLoginPasswordChange}
-        />
-        <button type="submit">Login</button>
-      </form>
-
-      <h2>Sign Up</h2>
-      <form onSubmit={handleSignup}>
-        <input
-          type="text"
-          placeholder="Username"
-          value={signupUsername}
-          onChange={handleSignupUsernameChange}
-        />
-        <input
-          type="password"
-          placeholder="Password"
-          value={signupPassword}
-          onChange={handleSignupPasswordChange}
-        />
-        <button type="submit">Sign Up</button>
-      </form>
+    <div id='loginJS'>
+      {isSignupMode ? ( // Conditionally render based on the mode state variable
+        <div>
+          <h1>Sign Up</h1>
+          <form onSubmit={handleSignup} className='form'>
+            <input
+              type="text"
+              placeholder="Username"
+              value={signupUsername}
+              onChange={handleSignupUsernameChange}
+            />
+            <input
+              type="password"
+              placeholder="Password"
+              value={signupPassword}
+              onChange={handleSignupPasswordChange}
+            />
+            <button type="submit">Sign Up</button>
+          </form>
+          <p>Already have an account? Log in{' '}
+            <span style={{ textDecoration: 'underline', cursor: 'pointer' }} onClick={handleModeToggle}>
+              here
+            </span>
+          </p>
+        </div>
+      ) : (
+        <div>
+          <h1>Login</h1>
+          {error && <p>{error}</p>}
+          <form onSubmit={handleLogin} className='form'>
+            <input
+              type="text"
+              placeholder="Username"
+              value={loginUsername}
+              onChange={handleLoginUsernameChange}
+            />
+            <input
+              type="password"
+              placeholder="Password"
+              value={loginPassword}
+              onChange={handleLoginPasswordChange}
+            />
+            <button type="submit">Login</button>
+          </form>
+          <p>New user? Sign Up{' '}
+            <span style={{ textDecoration: 'underline', cursor: 'pointer' }} onClick={handleModeToggle}>
+              here
+            </span>
+          </p>
+        </div>
+      )}
     </div>
   );
 };
 
 export default Login;
-
-
-

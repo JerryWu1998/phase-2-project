@@ -28,7 +28,6 @@ const SortingQuiz = ({ user, onUpdateHouse }) => {
 
   return (
     <div>
-      <h1>Sorting Quiz</h1>
       <Quiz questions={questions} user={user} onUpdateHouse={onUpdateHouse} />
     </div>
   );

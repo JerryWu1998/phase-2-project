@@ -81,7 +81,7 @@ function VirtualGreatHall({ user }) {
         </div>
       ))}
 
-      <form onSubmit={handleSubmit}>
+      <form onSubmit={handleSubmit} className='form'>
         <input
           type="text"
           value={newComment}
