@@ -438,56 +438,28 @@
       "username": "Jerry",
       "password": "123456",
       "house": "Ravenclaw",
-      "wand": [],
-      "comments": [
-        "123",
-        "456"
-      ]
+      "wand": []
     },
     {
       "id": 2,
       "username": "Will",
       "password": "654321",
       "house": "Gryffindor",
-      "wand": [],
-      "comments": [
-        "cat",
-        "dog"
-      ]
+      "wand": []
     },
     {
       "id": 3,
       "username": "Ammar",
       "password": "abcdef",
       "house": "Slytherin",
-      "wand": [],
-      "comments": [
-        "apple",
-        "orange"
-      ]
+      "wand": []
     },
     {
       "id": 4,
       "username": "asd",
       "password": "asd",
       "house": "Ravenclaw",
-      "wand": [],
-      "comments": [
-        "abc",
-        "def"
-      ]
-    },
-    {
-      "id": 5,
-      "username": "zxc",
-      "password": "zxc",
-      "house": "Gryffindor",
-      "wand": [
-        "10 inches, ",
-        "Ash wood, ",
-        "Dragon Heartstring core "
-      ],
-      "comments": []
+      "wand": []
     }
   ],
   "images": [
@@ -496,20 +468,46 @@
         "https://cdna.artstation.com/p/assets/images/images/056/271/808/large/favorisxp-foiwnmlxway769s.jpg?1668845562",
         "",
         "",
-        "",
-        ""
+        "https://w0.peakpx.com/wallpaper/794/75/HD-wallpaper-magic-magic-world-harry-potter-and-universal-studio.jpg",
+        "https://images.ctfassets.net/usf1vwtuqyxm/7lnoakM2cp5csDVoVVD0ZN/87025fa2ca8f22f3eeed6652b2dbcc51/HP-F1-philosophers-stone-great-hall-halloween-floating-pumpkins-feast-web-landscape?fm=jpg&q=70&w=2560"
       ],
       "wandImages": [
         "",
         "",
         ""
       ],
-      "houseIcons": [
-        "",
-        "",
-        "",
-        ""
+      "houses": [
+        "https://m.media-amazon.com/images/I/81BpIbsbaWL._AC_SX425_.jpg",
+        "https://m.media-amazon.com/images/I/71oSYjldfjL._AC_SY355_.jpg",
+        "https://m.media-amazon.com/images/I/81aLUsl0qeL._AC_SY355_.jpg",
+        "https://m.media-amazon.com/images/I/71OiL3mUsIL._AC_SX425_.jpg"
       ]
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "house": "Gryffindor",
+      "byUser": "zxc",
+      "comment": "bulabula"
+    },
+    {
+      "id": 2,
+      "house": "Ravenclaw",
+      "byUser": "Jerry",
+      "comment": "123456"
+    },
+    {
+      "id": 3,
+      "house": "Ravenclaw",
+      "byUser": "asd",
+      "comment": "orange"
+    },
+    {
+      "id": 4,
+      "house": "Slytherin",
+      "byUser": "Ammar",
+      "comment": "apple"
     }
   ]
 }

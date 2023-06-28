@@ -7,16 +7,13 @@ function VirtualGreatHall({ user }) {
   useEffect(() => {
     const fetchComments = async () => {
       try {
-        const response = await fetch('http://localhost:3000/users');
+        const response = await fetch('http://localhost:3000/comments');
         if (response.ok) {
           const data = await response.json();
-          setComments(data.map(user => ({
-            house: user.house,
-            comments: user.comments
-          })));
+          setComments(data);
         }
       } catch (error) {
-        console.error('Error occurred:', error);
+        console.error('Error occurred while fetching comments:', error);
       }
     };
     fetchComments();
@@ -30,65 +27,70 @@ function VirtualGreatHall({ user }) {
   };
 
   comments.forEach(data => {
-    commentsByHouse[data.house].push(data.comments);
+    if (commentsByHouse.hasOwnProperty(data.house)) {
+      commentsByHouse[data.house].push(data);
+    } else {
+      console.warn(`House '${data.house}' not found in 'commentsByHouse' object`);
+    }
   });
 
-  const handleInputChange = (event) => {
-    setNewComment(event.target.value);
-  };
-
-  const handleSubmit = async (event) => {
+  const handleCommentSubmit = async (event) => {
     event.preventDefault();
-
     try {
-      const response = await fetch(`http://localhost:3000/users/${user.id}`, {
-        method: 'PUT',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-          ...user,
-          comments: [...user.comments, newComment],
-        }),
+      const response = await fetch('http://localhost:3000/comments', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ comment: newComment, house: user.house, byUser: user.username })
       });
       if (response.ok) {
-        setComments((prevComments) => [
-          ...prevComments,
-          { house: user.house, comments: [newComment] },
-        ]);
+        const newComment = await response.json();
+        setComments([...comments, newComment]);
         setNewComment('');
       }
     } catch (error) {
-      console.error('Error occurred:', error);
+      console.error('Error occurred while posting comment:', error);
+    }
+  };
+
+  const handleCommentDelete = async (id) => {
+    try {
+      const response = await fetch(`http://localhost:3000/comments/${id}`, {
+        method: 'DELETE',
+      });
+      if (response.ok) {
+        setComments(comments.filter((comment) => comment.id !== id));
+      }
+    } catch (error) {
+      console.error('Error occurred while deleting comment:', error);
     }
   };
 
   return (
     <div>
       <h1>Virtual Great Hall</h1>
-      <h2>Welcome to the Great Hall, {user.username}!</h2>
+      <h2>Welcome to the Great Hall, {user.username} of house {user.house}!</h2>
       <h3>Comments:</h3>
       {Object.entries(commentsByHouse).map(([house, houseComments]) => (
         <div key={house}>
           <h4>{house}</h4>
-          {houseComments.map((comments, index) => (
-            <div key={index}>
-              {comments.map((comment, commentIndex) => (
-                <p key={commentIndex}>{comment}</p>
-              ))}
+          {houseComments.map(comment => (
+            <div key={comment.id}>
+              <p>{comment.comment}</p>
+              <p>Posted by: {comment.byUser}</p>
+              {comment.byUser === user.username &&
+                <button onClick={() => handleCommentDelete(comment.id)}>Delete</button>}
             </div>
           ))}
         </div>
       ))}
-
-      <form onSubmit={handleSubmit} className='form'>
-        <input
-          type="text"
+      <form onSubmit={handleCommentSubmit}>
+        <h3>Add a comment</h3>
+        <textarea
           value={newComment}
-          onChange={handleInputChange}
-          placeholder="Add a comment"
+          onChange={(e) => setNewComment(e.target.value)}
+          placeholder="Enter your comment"
         />
-        <button type="submit">Submit</button>
+        <button type="submit">Submit Comment</button>
       </form>
     </div>
   );

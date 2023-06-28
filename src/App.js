@@ -14,14 +14,13 @@ function App() {
     }
   }, []);
 
-  const handleLogin = (dataUsername, dataPassword, dataHouse, dataWand, dataComments, dataId) => {
+  const handleLogin = (dataUsername, dataPassword, dataHouse, dataWand, dataId) => {
     const userData = {
       id: dataId,
       username: dataUsername,
       password: dataPassword,
       house: dataHouse,
       wand: dataWand,
-      comments: dataComments
     };
     setUser(userData);
     localStorage.setItem('user', JSON.stringify(userData));

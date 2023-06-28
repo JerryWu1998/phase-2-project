@@ -41,7 +41,7 @@ const Login = ({ onLogin }) => {
           user.username === loginUsername && user.password === loginPassword
         );
         if (user) {
-          onLogin(user.username, user.password, user.house, user.wand, user.comments, user.id);
+          onLogin(user.username, user.password, user.house, user.wand, user.id);
         } else {
           setError('Invalid username or password');
         }
@@ -74,6 +74,10 @@ const Login = ({ onLogin }) => {
 
     if (existingUsernames.includes(signupUsername)) {
       setError('Username already taken');
+    } else if (signupUsername.length <= 5) {
+      setError('Username too short')
+    } else if (signupPassword.length <= 5) {
+      setError('Password too short')
     } else {
       try {
         const response = await fetch('http://localhost:3000/users', {
@@ -107,6 +111,7 @@ const Login = ({ onLogin }) => {
       {isSignupMode ? ( // Conditionally render based on the mode state variable
         <div>
           <h1>Sign Up</h1>
+          {error && <p>{error}</p>}
           <form onSubmit={handleSignup} className='form'>
             <input
               type="text"
