@@ -5,7 +5,6 @@ import Profile from './components/Profile';
 
 function App() {
   const [user, setUser] = useState(null);
-  
 
   useEffect(() => {
     const storedUser = localStorage.getItem('user');
@@ -14,11 +13,12 @@ function App() {
     }
   }, []);
 
-  const handleLogin = (dataUsername, dataPassword, dataHouse, dataWand, dataId) => {
+  const handleLogin = (dataUsername, dataPassword, dataHouseIcon, dataHouse, dataWand, dataId) => {
     const userData = {
       id: dataId,
       username: dataUsername,
       password: dataPassword,
+      houseIcon: dataHouseIcon,
       house: dataHouse,
       wand: dataWand,
     };
@@ -26,14 +26,13 @@ function App() {
     localStorage.setItem('user', JSON.stringify(userData));
   };
 
-
   const handleLogout = () => {
     setUser(null);
     localStorage.removeItem('user');
   };
 
   const handleUpdateHouse = (house) => {
-    const updatedUser = { ...user, house };
+    const updatedUser = { ...user, house: house[0], houseIcon: house[1] };
     localStorage.setItem('user', JSON.stringify(updatedUser));
     setUser(updatedUser);
   };

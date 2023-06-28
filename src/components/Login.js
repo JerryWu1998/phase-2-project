@@ -41,7 +41,7 @@ const Login = ({ onLogin }) => {
           user.username === loginUsername && user.password === loginPassword
         );
         if (user) {
-          onLogin(user.username, user.password, user.house, user.wand, user.id);
+          onLogin(user.username, user.password, user.houseIcon, user.house, user.wand, user.id);
         } else {
           setError('Invalid username or password');
         }
@@ -74,9 +74,9 @@ const Login = ({ onLogin }) => {
 
     if (existingUsernames.includes(signupUsername)) {
       setError('Username already taken');
-    } else if (signupUsername.length <= 5) {
+    } else if (signupUsername.length < 5) {
       setError('Username too short')
-    } else if (signupPassword.length <= 5) {
+    } else if (signupPassword.length < 5) {
       setError('Password too short')
     } else {
       try {
@@ -88,9 +88,9 @@ const Login = ({ onLogin }) => {
           body: JSON.stringify({
             username: signupUsername,
             password: signupPassword,
+            houseIcon: "",
             house: "",
             wand: [],
-            comments: []
           }),
         });
 

@@ -27,20 +27,26 @@ const Quiz = ({ questions, user, onUpdateHouse }) => {
     }
 
     const maxPoints = Math.max(...totals);
-    const houses = ['Gryffindor', 'Ravenclaw', 'Hufflepuff', 'Slytherin'];
-    const house = houses[totals.indexOf(maxPoints)];
+    const houses = [
+      ['Gryffindor', "https://m.media-amazon.com/images/I/81BpIbsbaWL._AC_SX425_.jpg"],
+      ['Ravenclaw', "https://m.media-amazon.com/images/I/71oSYjldfjL._AC_SY355_.jpg"],
+      ['Hufflepuff', "https://m.media-amazon.com/images/I/81aLUsl0qeL._AC_SY355_.jpg"],
+      ['Slytherin', "https://m.media-amazon.com/images/I/71OiL3mUsIL._AC_SX425_.jpg"]
+    ];
+
+    const updateHouse = houses[totals.indexOf(maxPoints)];
 
     fetch(`http://localhost:3000/users/${user.id}`, {
       method: 'PUT',
       headers: {
         'Content-Type': 'application/json'
       },
-      body: JSON.stringify({ ...user, house })
+      body: JSON.stringify({ ...user, house: updateHouse[0], houseIcon: updateHouse[1] })
     })
       .then(response => response.json())
       .then(data => {
-        onUpdateHouse(house);
-        alert(`You are in ${house}!`);
+        onUpdateHouse(updateHouse)
+        alert(`You are in ${updateHouse[0]}!`)
         // Reset answers to empty array
         setAnswers(Array(questions.length).fill([0, 0, 0, 0]));
         // Redirect to profile page

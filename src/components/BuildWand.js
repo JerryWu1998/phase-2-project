@@ -4,7 +4,7 @@ import { useHistory } from 'react-router-dom';
 function BuildWand({ user, onUpdateWand }) {
 
   const history = useHistory();
-  const [wandLength, setWandLength] = useState(10);
+  const [wandLength, setWandLength] = useState('Ten');
   const [wandWood, setWandWood] = useState('Ash');
   const [woodDescription, setWoodDescription] = useState(`The ash wand cleaves to its one true master and ought not to be passed on or gifted from the original owner, because it will lose power and skill. This tendency is extreme if the core is of unicorn. Old superstitions regarding wands rarely bear close examination, but I find that the old rhyme regarding rowan, chestnut, ash and hazel wands (rowan gossips, chestnut drones, ash is stubborn, hazel moans) contains a small nugget of truth. Those witches and wizards best suited to ash wands are not, in my experience, lightly swayed from their beliefs or purposes. However, the brash or over-confident witch or wizard, who often insists on trying wands of this prestigious wood, will be disappointed by its effects. The ideal owner may be stubborn, and will certainly be courageous, but never crass or arrogant.`);
   const [wandCore, setWandCore] = useState('Dragon Heartstring');
@@ -48,7 +48,7 @@ function BuildWand({ user, onUpdateWand }) {
   const handleSubmit = (event) => {
     event.preventDefault();
     console.log(wandLength, wandWood, wandCore);
-    
+
     const wand = [wandLength + " inches, ", wandWood + " wood, ", wandCore + " core "]
 
     fetch(`http://localhost:3000/users/${user.id}`, {
@@ -77,18 +77,18 @@ function BuildWand({ user, onUpdateWand }) {
         <h2>Wand Length:</h2>
         <p>Most wands are between 9-15 inches long. Wandmakers often match the wand length to the height of witch or wizard who will use it, but Ollivander considers this measure inadequate. In his experience, longer than average wands tend to be drawn to those with a physical peculiarity or a bigger personality whereas abnormally short wands select people whose character lacks in something.</p>
         <select name="length" onChange={handleLengthChange} value={wandLength}>
-          <option value={10}>Ten inches</option>
-          <option value={10.25}>Ten and a quarter inches</option>
-          <option value={10.5}>Ten and a half inches</option>
-          <option value={10.75}>Ten and three quarter inches</option>
-          <option value={11}>Eleven inches</option>
-          <option value={11.25}>Eleven and a quarter inches</option>
-          <option value={11.5}>Eleven and a half inches</option>
-          <option value={11.75}>Eleven and three quarter inches</option>
-          <option value={12}>Twelve inches</option>
-          <option value={12.25}>Twelve and a quarter inches</option>
-          <option value={12.5}>Twelve and a half inches</option>
-          <option value={12.75}>Twelve and three quarter inches</option>
+          <option value='Ten'>Ten inches</option>
+          <option value='Ten and a quarter'>Ten and a quarter inches</option>
+          <option value='Ten and a half'>Ten and a half inches</option>
+          <option value='Ten and three'>Ten and three quarter inches</option>
+          <option value='Eleven'>Eleven inches</option>
+          <option value='Eleven and a quarter'>Eleven and a quarter inches</option>
+          <option value='Eleven and a half'>Eleven and a half inches</option>
+          <option value='Eleven and three quarter'>Eleven and three quarter inches</option>
+          <option value='Twelve'>Twelve inches</option>
+          <option value='Twelve and a quarter'>Twelve and a quarter inches</option>
+          <option value='Twelve and a half'>Twelve and a half inches</option>
+          <option value='Twelve and three quarter'>Twelve and three quarter inches</option>
         </select>
         <h2>Wand Wood:</h2>
         <p>Very few trees produce wand-quality wood, although these trees can usually be identified if they have Bowtruckles. Current known wand woods are:</p>

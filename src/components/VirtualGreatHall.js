@@ -40,7 +40,7 @@ function VirtualGreatHall({ user }) {
       const response = await fetch('http://localhost:3000/comments', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ comment: newComment, house: user.house, byUser: user.username })
+        body: JSON.stringify({ comment: newComment, house: user.house, houseIcon:user.houseIcon, byUser: user.username })
       });
       if (response.ok) {
         const newComment = await response.json();
@@ -76,7 +76,8 @@ function VirtualGreatHall({ user }) {
           {houseComments.map(comment => (
             <div key={comment.id}>
               <p>{comment.comment}</p>
-              <p>Posted by: {comment.byUser}</p>
+              <img src={`${comment.houseIcon}`} alt=""/>
+              <p>{comment.byUser}</p>
               {comment.byUser === user.username &&
                 <button onClick={() => handleCommentDelete(comment.id)}>Delete</button>}
             </div>

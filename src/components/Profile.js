@@ -43,6 +43,7 @@ function Profile({ user, onLogout, onUpdateHouse, onUpdateWand }) {
             <h1>Profile</h1>
             <h2>Welcome, {user.username}!</h2>
             <p>Your House: {user.house}</p>
+            <img src={`${user.houseIcon}`} alt=""></img>
             <p>Your Wand: {user.wand}</p>
             <button onClick={handleLogout}>Logout</button>
           </div>

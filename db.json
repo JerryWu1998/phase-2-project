@@ -437,13 +437,19 @@
       "id": 1,
       "username": "Jerry",
       "password": "123456",
+      "houseIcon": "https://m.media-amazon.com/images/I/71oSYjldfjL._AC_SY355_.jpg",
       "house": "Ravenclaw",
-      "wand": []
+      "wand": [
+        "Ten inches, ",
+        "Ash wood, ",
+        "Dragon Heartstring core "
+      ]
     },
     {
       "id": 2,
       "username": "Will",
       "password": "654321",
+      "houseIcon": "https://m.media-amazon.com/images/I/81BpIbsbaWL._AC_SX425_.jpg",
       "house": "Gryffindor",
       "wand": []
     },
@@ -451,15 +457,21 @@
       "id": 3,
       "username": "Ammar",
       "password": "abcdef",
+      "houseIcon": "https://m.media-amazon.com/images/I/71OiL3mUsIL._AC_SX425_.jpg",
       "house": "Slytherin",
       "wand": []
     },
     {
       "id": 4,
-      "username": "asd",
-      "password": "asd",
+      "username": "asdfg",
+      "password": "12345",
+      "houseIcon": "https://m.media-amazon.com/images/I/71oSYjldfjL._AC_SY355_.jpg",
       "house": "Ravenclaw",
-      "wand": []
+      "wand": [
+        "Eleven and a quarter inches, ",
+        "Maple wood, ",
+        "Unicorn Hair core "
+      ]
     }
   ],
   "images": [
@@ -475,12 +487,6 @@
         "",
         "",
         ""
-      ],
-      "houses": [
-        "https://m.media-amazon.com/images/I/81BpIbsbaWL._AC_SX425_.jpg",
-        "https://m.media-amazon.com/images/I/71oSYjldfjL._AC_SY355_.jpg",
-        "https://m.media-amazon.com/images/I/81aLUsl0qeL._AC_SY355_.jpg",
-        "https://m.media-amazon.com/images/I/71OiL3mUsIL._AC_SX425_.jpg"
       ]
     }
   ],
@@ -488,24 +494,21 @@
     {
       "id": 1,
       "house": "Gryffindor",
+      "houseIcon": "https://m.media-amazon.com/images/I/81BpIbsbaWL._AC_SX425_.jpg",
       "byUser": "zxc",
       "comment": "bulabula"
     },
     {
       "id": 2,
       "house": "Ravenclaw",
+      "houseIcon": "https://m.media-amazon.com/images/I/71oSYjldfjL._AC_SY355_.jpg",
       "byUser": "Jerry",
       "comment": "123456"
     },
     {
-      "id": 3,
-      "house": "Ravenclaw",
-      "byUser": "asd",
-      "comment": "orange"
-    },
-    {
       "id": 4,
       "house": "Slytherin",
+      "houseIcon": "https://m.media-amazon.com/images/I/71OiL3mUsIL._AC_SX425_.jpg",
       "byUser": "Ammar",
       "comment": "apple"
     }
