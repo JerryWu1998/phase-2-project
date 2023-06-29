@@ -22,10 +22,6 @@ const SortingQuiz = ({ user, onUpdateHouse }) => {
     fetchQuestions();
   }, []);
 
-  if (questions.length === 0) {
-    return <div>Loading quiz...</div>;
-  }
-
   return (
     <div>
       <Quiz questions={questions} user={user} onUpdateHouse={onUpdateHouse} />

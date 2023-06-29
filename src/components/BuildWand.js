@@ -71,12 +71,12 @@ function BuildWand({ user, onUpdateWand }) {
   };
 
   return (
-    <div>
+    <div id='wandJS'>
       <h1>Build Your Wand</h1>
       <form onSubmit={handleSubmit}>
-        <h2>Wand Length:</h2>
+        <h2 className='wand-h2'>Wand Length:</h2>
         <p>Most wands are between 9-15 inches long. Wandmakers often match the wand length to the height of witch or wizard who will use it, but Ollivander considers this measure inadequate. In his experience, longer than average wands tend to be drawn to those with a physical peculiarity or a bigger personality whereas abnormally short wands select people whose character lacks in something.</p>
-        <select name="length" onChange={handleLengthChange} value={wandLength}>
+        <select className='wand-input' name="length" onChange={handleLengthChange} value={wandLength}>
           <option value='Ten'>Ten inches</option>
           <option value='Ten and a quarter'>Ten and a quarter inches</option>
           <option value='Ten and a half'>Ten and a half inches</option>
@@ -90,11 +90,11 @@ function BuildWand({ user, onUpdateWand }) {
           <option value='Twelve and a half'>Twelve and a half inches</option>
           <option value='Twelve and three quarter'>Twelve and three quarter inches</option>
         </select>
-        <h2>Wand Wood:</h2>
+        <h2 className='wand-h2'>Wand Wood:</h2>
         <p>Very few trees produce wand-quality wood, although these trees can usually be identified if they have Bowtruckles. Current known wand woods are:</p>
-        <h3>Wood Description: </h3>
+        <h3 className='wand-h3'>Wood Description: </h3>
         <p>{woodDescription}</p>
-        <select name="wood" onChange={handleWoodChange} value={wandWood}>
+        <select className='wand-input' name="wood" onChange={handleWoodChange} value={wandWood}>
           <option value="Ash">Ash</option>
           <option value="Elder">Elder</option>
           <option value="Hawthorn">Hawthorn</option>
@@ -103,17 +103,18 @@ function BuildWand({ user, onUpdateWand }) {
           <option value="English Oak">English Oak</option>
           <option value="Walnut">Walnut</option>
         </select>
-        <h2>Wand Core:</h2>
-        <img src='https://progameguides.com/wp-content/uploads/2023/02/Hogwarts_Legacy_Wand_Core_Options.jpg?fit=1200%2C675' alt=""
-          width="400" height="250" />
-        <h3>Core Description: </h3>
+        <h2 className='wand-h2'>Wand Core:</h2>
+        <img src='https://i.imgur.com/vX2w8dm.jpg' alt=""
+          width="500" height="250" />
+        <h3 className='wand-h3'>Core Description: </h3>
         <p>{coreDescription}</p>
-        <select name="core" onChange={handleCoreChange} value={wandCore}>
+        <select className='wand-input' name="core" onChange={handleCoreChange} value={wandCore}>
           <option value="Dragon Heartstring">Dragon Heartstring</option>
           <option value="Unicorn Hair">Unicorn Hair</option>
           <option value="Phoenix Feather">Phoenix Feather</option>
         </select>
-        <button type="submit">Create Wand</button>
+        <div></div>
+        <button className='submit-wand' type="submit">Create Wand</button>
       </form>
     </div>
   );

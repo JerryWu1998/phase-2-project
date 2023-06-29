@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { useHistory } from 'react-router-dom';
 
 const Quiz = ({ questions, user, onUpdateHouse }) => {
-  const [answers, setAnswers] = useState(Array(questions.length).fill([0, 0, 0, 0]));
+  const [answers, setAnswers] = useState(Array.from({ length: 12 }, () => [0, 0, 0, 0]));
   const history = useHistory();
 
   const handleOptionChange = (questionIndex, points) => {
@@ -14,7 +14,8 @@ const Quiz = ({ questions, user, onUpdateHouse }) => {
   };
 
   const handleSubmit = () => {
-    if (answers.some(answer => answer.every(point => point === 0))) {
+    const unansweredQuestions = answers.some(answer => answer.every(point => point === 0));
+    if (unansweredQuestions) {
       alert('You need to answer all questions!');
       return;
     }
@@ -57,6 +58,7 @@ const Quiz = ({ questions, user, onUpdateHouse }) => {
       });
   };
 
+
   function changeIntToLetter(int) {
     if (int === 1) {
       return "One"
@@ -88,7 +90,8 @@ const Quiz = ({ questions, user, onUpdateHouse }) => {
 
   return (
     <div id="quizJS">
-      <h1>Sorting Quiz</h1>
+      <h1 className='quiz-h1'>Sorting Quiz</h1>
+      <img id='quiz-hat' src="https://assets.time.com/interactives/harry_potter_house/img/sorting_hat.png" alt='' />
       {questions.map((question, index) => (
         <div key={question.id}>
           <h2>Question {changeIntToLetter(index + 1)}</h2>
@@ -102,13 +105,13 @@ const Quiz = ({ questions, user, onUpdateHouse }) => {
                   name={`question-${question.id}`}
                   onChange={() => handleOptionChange(index, option.points)}
                 />
-                <label>{option.text}</label>
+                <label>{" "}{option.text}</label>
               </div>
             );
           })}
         </div>
       ))}
-      <button onClick={handleSubmit}>Submit</button>
+      <button className='submit-quiz' onClick={handleSubmit}>Submit</button>
     </div>
   );
 };

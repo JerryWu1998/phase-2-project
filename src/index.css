@@ -1,7 +1,3 @@
-/* body {
-  background-image: url('https://images-ext-2.discordapp.net/external/As7dB_h3zjFkZJXu-3pRYojn0XtKyjHfz69WBI6FHxw/%3F1668845562/https/cdna.artstation.com/p/assets/images/images/056/271/808/large/favorisxp-foiwnmlxway769s.jpg?width=1664&height=936');
-} */
-
 h1 {
   font-family: 'Harry Potter', sans-serif;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
@@ -9,43 +5,49 @@ h1 {
   margin-bottom: 10px;
   text-transform: uppercase;
   text-align: center;
-  color: #333333c4;
+  color: rgb(255, 255, 255);
 }
 
 h1::first-letter {
-  font-size: 1.5em; /* Adjust the size as needed */
+  font-size: 1.5em;
+  /* Adjust the size as needed */
 }
 
 h1::first-line {
-  font-size: 1em; /* Adjust the size as needed */
+  font-size: 1em;
+  /* Adjust the size as needed */
 }
 
 h2 {
   font-family: 'Harry Potter', sans-serif;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  text-shadow: 2px 2px 4px rgb(0, 0, 0);
   font-weight: 400;
   letter-spacing: 1.5px;
   line-height: 1.5;
+  text-shadow: 2px 2px 2px rgba(0, 213, 255, 0.877);
   text-transform: capitalize;
-  color: #333333c4;
+  color: #ffffff;
   margin-bottom: 10px;
 }
 
 h2::first-letter {
-  font-size: 1em; /* Adjust the size as needed */
+  font-size: 1em;
+  /* Adjust the size as needed */
 }
 
 h2::first-line {
-  font-size: 1em; /* Adjust the size as needed */
+  font-size: 1em;
+  /* Adjust the size as needed */
 }
 
 h3 {
   font-family: 'SPQR', sans-serif;
-  font-weight: 700;
+  font-size: 20px;
+  font-weight: 300;
   line-height: 1.5;
-  color: #000000;
-  text-transform: uppercase;
+  color: #ffffff;
   margin-bottom: 10px;
+  text-shadow: 2.5px 2.5px 2px#000000;
 }
 
 p {
@@ -53,15 +55,19 @@ p {
   font-size: 14px;
   font-weight: 300;
   line-height: 1.5;
-  color: #000000;
+  color: #ffffff;
   margin-bottom: 10px;
+  text-shadow: 1px 1px 1px#000000;
 }
 
 p::first-letter {
-  font-size: 1.5em; /* Adjust the size as needed */
+  font-size: 1.5em;
+  /* Adjust the size as needed */
 }
+
 p::first-line {
-  font-size: 1em; /* Adjust the size as needed */
+  font-size: 1em;
+  /* Adjust the size as needed */
 }
 
 .form {
@@ -74,27 +80,327 @@ p::first-line {
   margin-bottom: 10px;
 }
 
+#loginJS {
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-image: url("https://cdna.artstation.com/p/assets/images/images/056/271/808/large/favorisxp-foiwnmlxway769s.jpg?1668845562");
+  background-size: 100% auto;
+  background-repeat: no-repeat;
+}
+
+.login-header {
+  font-family: 'Harry Potter', sans-serif;
+  text-shadow: 4px 4px 8px rgb(255, 255, 255);
+  letter-spacing: 4px;
+  margin-bottom: 10px;
+  text-transform: uppercase;
+  text-align: center;
+  color: rgb(0, 0, 0);
+}
+
+.switch-login {
+  font-family: 'SPQR', sans-serif;
+  font-size: 16px;
+  font-weight: 300;
+  letter-spacing: 0px;
+  line-height: 1.5;
+  color: #ffffff;
+  text-shadow: 4px 4px 15px rgb(0, 0, 0);
+  margin-bottom: 10px;
+}
+
+.login-input {
+  padding: 5px;
+  border-radius: 10px;
+  border-color: #000000;
+  border-width: 1px;
+  font-size: 14px;
+  background-color: #ffffffa0;
+}
+
+.login-button {
+  border-radius: 5px;
+  padding: 3px;
+  border-color: #00000000;
+  border-width: 1px;
+  background-color: rgba(255, 255, 255, 0.514);
+}
+
+.login-here {
+  text-shadow: 4px 4px 15px #ae00ff;
+}
+
+.login-error {
+  font-size: 14px;
+  font-weight: 300;
+  color: #ffffff;
+  margin-bottom: 5px;
+  text-shadow: 4px 4px 15px #ff0000;
+}
+
+@keyframes sparkle {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+
+  100% {
+    transform: scale(1.5);
+    opacity: 0;
+  }
+}
+
+.sparkle-animation {
+  animation: sparkle 0.5s ease-out;
+}
+
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.navMenu {
+  display: flex;
+  justify-content: space-evenly;
+  background-color: #000000;
+  padding: 20px;
+  list-style: none;
+  box-shadow: 0 2px 3px #737373;
+  font-family: 'Harry Potter', sans-serif;
+  text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.479);
+  letter-spacing: 4px;
+  margin-bottom: 0px;
+  text-transform: uppercase;
+  text-align: center;
+  color: #ffffff;
+}
+
+.navMenu a {
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 18px;
+  transition: color 0.3s ease;
+}
+
+.navMenu a::first-letter {
+  font-size: 1.5em;
+}
+
+.navMenu a:hover {
+  color: #737373;
+}
+
+.profileJS {
+  padding: 20px;
+  background-image: url("https://i.imgur.com/EvKonSY.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  text-align: center;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+  overflow: auto;
+}
+
+.profile-image {
+  height: 200px;
+  width: 140px;
+  border: #737373;
+  border-radius: 5px;
+  border-width: 2px;
+}
+
 #quizJS {
   display: flex;
   flex-direction: column;
+  align-items: flex-start;
+  /* Align questions to the left */
   text-align: left;
+  padding: 20px;
+  background-image: url("https://cdna.artstation.com/p/assets/images/images/010/311/232/medium/joao-pedro-grandinetti-space.jpg?1523751831");
+  background-size: 100% auto;
+  background-repeat: no-repeat;
+}
+
+#quizJS img {
+  display: block;
+  margin: 0 auto;
+  /* Center the image horizontally */
+  margin-top: 20px;
+  /* Add top margin to create space between image and questions */
 }
 
 .quiz-options {
   font-family: 'SPQR', sans-serif;
   font-size: 14px;
   font-weight: 300;
-  line-height: 1.5;
-  color: #000000;
-  margin-bottom: 10px;
+  line-height: 1.2;
+  color: #ffffffee;
+  text-shadow: 1px 1px 1px rgb(170, 0, 255);
+  margin-bottom: 15px;
   margin-right: 10px;
 }
 
+.quiz-questions {
+  padding: 15px;
+  text-shadow: 1px 1px 1px #000000;
+}
 
-#loginJS {
+.quiz-h1 {
+  display: block;
+  margin: 0 auto;
+  /* Center the image horizontally */
+}
+
+#quiz-hat {
+  width: 200px;
+  /* Use 'width' instead of 'length' */
+  height: 200px;
+  /* Specify the 'height' property for the image */
+}
+
+#wandJS {
+  padding: 20px;
+  background-image: url("https://cdnb.artstation.com/p/assets/images/images/030/346/571/large/jishinn-raj-night-view-low-res.jpg?1600326990");
+  background-size: 100% auto;
+  background-repeat: no-repeat;
+}
+
+.wand-input {
+  margin-top: 10px;
+  margin-bottom: 20px;
+  border-radius: 7.5px;
+  background-color: rgba(255, 255, 255, 0.7);
+  border-width: 1.5px;
+  border-color: #737373;
+  box-shadow: 0 2px 2px rgba(255, 140, 0, 0.7);
+  font-size: 16px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.submit-quiz {
+  border-radius: 5px;
+  padding: 5px;
+  border-color: #000000;
+  border-width: 1px;
+  background-color: rgb(255, 255, 255);
+  box-shadow: 0 2px 2px rgba(170, 0, 255, 0.7);
+}
+
+.submit-wand {
+  font-size: 18px;
+  border-radius: 5px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  padding-left: 10px;
+  padding-right: 10px;
+  border-color: #000000;
+  border-width: 1px;
+  background-color: rgb(255, 255, 255);
+  box-shadow: 0 2px 2px rgba(255, 140, 0, 0.7);
+  background-color: rgba(255, 255, 255, 0.7);
+}
+
+.wand-h2 {
+  margin-top: 30px;
+  margin-bottom: 20px
+}
+
+.wand-h3 {
+  margin-top: 15px;
+  margin-bottom: 10px;
+}
+
+#great-hallJS {
+  padding: 20px;
   display: flex;
-  text-align: center;
-  justify-content: center;
+  flex-direction: column;
   align-items: center;
-  height: 75vh;
+  background-image: url("https://steamuserimages-a.akamaihd.net/ugc/2047486293877604151/26E453A9C9E3AF22ED7C30D13C3957EC6583FF3F/?imw=5000&imh=5000&ima=fit&impolicy=Letterbox&imcolor=%23000000&letterbox=false");
+  background-size: 100% auto;
+}
+
+.hall-icons {
+  height: 30px;
+  width: 20px;
+  margin-right: 5px;
+}
+
+.comment-container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-bottom: 10px;
+
+}
+
+.comment-text {
+  margin: 0;
+}
+
+.comment-user {
+  display: flex;
+}
+
+.comment-user p {
+  font-family: 'Harry Potter', sans-serif;
+  color: #ffffff;
+  letter-spacing: 1px;
+  text-shadow: #000000;
+
+}
+
+.comment-user img {
+  height: 30px;
+  width: 20px;
+  margin-right: 5px;
+}
+
+.hall-input {
+  padding: 5px;
+  border-radius: 10px;
+  border-color: #000000;
+  border-width: 1px;
+  font-size: 14px;
+  background-color: #ffffffa0;
+}
+
+.hall-button {
+  font-size: 16px;
+  border-radius: 5px;
+  padding-top: 3px;
+  padding-bottom: 3px;
+  padding-left: 10px;
+  padding-right: 10px;
+  border-color: #000000;
+  border-width: 1px;
+  background-color: rgb(255, 255, 255);
+  box-shadow: 0 2px 2px rgba(0, 255, 0, 0.7);
+  background-color: rgba(255, 255, 255, 0.7);
+  
+}
+
+.hall-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.hall-delete {
+  border-radius: 5px;
+  padding: 5px;
+  border-color: #000000;
+  border-width: 1px;
+  background-color: rgba(255, 255, 255, 0.7);
+  box-shadow: 0 2px 2px rgba(255, 0, 0, 0.7);
 }

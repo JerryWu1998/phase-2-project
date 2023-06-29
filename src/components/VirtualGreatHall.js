@@ -19,38 +19,27 @@ function VirtualGreatHall({ user }) {
     fetchComments();
   }, []);
 
-  const commentsByHouse = {
-    Gryffindor: [],
-    Ravenclaw: [],
-    Hufflepuff: [],
-    Slytherin: []
-  };
-
-  comments.forEach(data => {
-    if (commentsByHouse.hasOwnProperty(data.house)) {
-      commentsByHouse[data.house].push(data);
-    } else {
-      console.warn(`House '${data.house}' not found in 'commentsByHouse' object`);
-    }
-  });
-
   const handleCommentSubmit = async (event) => {
     event.preventDefault();
-    try {
-      const response = await fetch('http://localhost:3000/comments', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ comment: newComment, house: user.house, houseIcon:user.houseIcon, byUser: user.username })
-      });
-      if (response.ok) {
-        const newComment = await response.json();
-        setComments([...comments, newComment]);
-        setNewComment('');
+    if (newComment === "") {
+      window.alert("You cannot post empty comment!")
+    } else {
+      try {
+        const response = await fetch('http://localhost:3000/comments', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ comment: newComment, house: user.house, houseIcon: user.houseIcon, byUser: user.username })
+        });
+        if (response.ok) {
+          const newComment = await response.json();
+          setComments([...comments, newComment]);
+          setNewComment('');
+        }
+      } catch (error) {
+        console.error('Error occurred while posting comment:', error);
       }
-    } catch (error) {
-      console.error('Error occurred while posting comment:', error);
-    }
-  };
+    };
+  }
 
   const handleCommentDelete = async (id) => {
     try {
@@ -66,34 +55,39 @@ function VirtualGreatHall({ user }) {
   };
 
   return (
-    <div>
+    <div id='great-hallJS'>
       <h1>Virtual Great Hall</h1>
       <h2>Welcome to the Great Hall, {user.username} of house {user.house}!</h2>
       <h3>Comments:</h3>
-      {Object.entries(commentsByHouse).map(([house, houseComments]) => (
-        <div key={house}>
-          <h4>{house}</h4>
-          {houseComments.map(comment => (
-            <div key={comment.id}>
-              <p>{comment.comment}</p>
-              <img src={`${comment.houseIcon}`} alt=""/>
-              <p>{comment.byUser}</p>
-              {comment.byUser === user.username &&
-                <button onClick={() => handleCommentDelete(comment.id)}>Delete</button>}
+
+      <div>
+        {comments.map(comment => (
+          <div key={comment.id} className='comment-container'>
+            <div>
+              <p className='comment-text'>{comment.comment}</p>
             </div>
-          ))}
-        </div>
-      ))}
-      <form onSubmit={handleCommentSubmit}>
+            <div className='comment-user'>
+              <img className='hall-icons' src={`${comment.houseIcon}`} alt="" />
+              <p>{comment.byUser}</p>
+            </div>
+            {comment.byUser === user.username &&
+              <button className='hall-delete' onClick={() => handleCommentDelete(comment.id)}>Delete</button>}
+          </div>
+        ))}
+      </div>
+      <form className='hall-form' onSubmit={handleCommentSubmit}>
         <h3>Add a comment</h3>
         <textarea
           value={newComment}
           onChange={(e) => setNewComment(e.target.value)}
           placeholder="Enter your comment"
+          className='hall-input'
         />
-        <button type="submit">Submit Comment</button>
+        <p></p>
+        <button className='hall-button' type="submit">Submit Comment</button>
       </form>
     </div>
+
   );
 }
 

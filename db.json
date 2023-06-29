@@ -2,7 +2,7 @@
   "quiz": [
     {
       "id": 1,
-      "question": "Choose one to continue",
+      "question": "Pick one:",
       "optionA": {
         "text": "Dawn",
         "points": [
@@ -24,7 +24,7 @@
     },
     {
       "id": 2,
-      "question": "Pick one",
+      "question": "Pick one:",
       "optionA": {
         "text": "Forest",
         "points": [
@@ -46,7 +46,7 @@
     },
     {
       "id": 3,
-      "question": "Pick one",
+      "question": "Pick one:",
       "optionA": {
         "text": "Moon",
         "points": [
@@ -446,24 +446,8 @@
       ]
     },
     {
-      "id": 2,
-      "username": "Will",
-      "password": "654321",
-      "houseIcon": "https://m.media-amazon.com/images/I/81BpIbsbaWL._AC_SX425_.jpg",
-      "house": "Gryffindor",
-      "wand": []
-    },
-    {
-      "id": 3,
-      "username": "Ammar",
-      "password": "abcdef",
-      "houseIcon": "https://m.media-amazon.com/images/I/71OiL3mUsIL._AC_SX425_.jpg",
-      "house": "Slytherin",
-      "wand": []
-    },
-    {
       "id": 4,
-      "username": "asdfg",
+      "username": "Cedric",
       "password": "12345",
       "houseIcon": "https://m.media-amazon.com/images/I/71oSYjldfjL._AC_SY355_.jpg",
       "house": "Ravenclaw",
@@ -478,10 +462,10 @@
     {
       "backgroundImages": [
         "https://cdna.artstation.com/p/assets/images/images/056/271/808/large/favorisxp-foiwnmlxway769s.jpg?1668845562",
-        "",
-        "",
-        "https://w0.peakpx.com/wallpaper/794/75/HD-wallpaper-magic-magic-world-harry-potter-and-universal-studio.jpg",
-        "https://images.ctfassets.net/usf1vwtuqyxm/7lnoakM2cp5csDVoVVD0ZN/87025fa2ca8f22f3eeed6652b2dbcc51/HP-F1-philosophers-stone-great-hall-halloween-floating-pumpkins-feast-web-landscape?fm=jpg&q=70&w=2560"
+        "https://i.imgur.com/EvKonSY.jpg",
+        "https://cdna.artstation.com/p/assets/images/images/010/311/232/medium/joao-pedro-grandinetti-space.jpg?1523751831",
+        "https://cdnb.artstation.com/p/assets/images/images/030/346/571/large/jishinn-raj-night-view-low-res.jpg?1600326990",
+        "https://steamuserimages-a.akamaihd.net/ugc/2047486293877604151/26E453A9C9E3AF22ED7C30D13C3957EC6583FF3F/?imw=5000&imh=5000&ima=fit&impolicy=Letterbox&imcolor=%23000000&letterbox=false"
       ],
       "wandImages": [
         "",
@@ -495,22 +479,29 @@
       "id": 1,
       "house": "Gryffindor",
       "houseIcon": "https://m.media-amazon.com/images/I/81BpIbsbaWL._AC_SX425_.jpg",
-      "byUser": "zxc",
-      "comment": "bulabula"
-    },
-    {
-      "id": 2,
-      "house": "Ravenclaw",
-      "houseIcon": "https://m.media-amazon.com/images/I/71oSYjldfjL._AC_SY355_.jpg",
-      "byUser": "Jerry",
-      "comment": "123456"
+      "byUser": "Another Weasley",
+      "comment": "where the hell is divination class??"
     },
     {
       "id": 4,
       "house": "Slytherin",
       "houseIcon": "https://m.media-amazon.com/images/I/71OiL3mUsIL._AC_SX425_.jpg",
-      "byUser": "Ammar",
-      "comment": "apple"
+      "byUser": "Malfoy",
+      "comment": "Nerd."
+    },
+    {
+      "comment": "@Another Weasley North Tower. You'll see a trapdoor near the top",
+      "house": "Ravenclaw",
+      "houseIcon": "https://m.media-amazon.com/images/I/71oSYjldfjL._AC_SY355_.jpg",
+      "byUser": "Jerry",
+      "id": 5
+    },
+    {
+      "comment": "Look for the stained class with the crying lady",
+      "house": "Hufflepuff",
+      "houseIcon": "https://m.media-amazon.com/images/I/81aLUsl0qeL._AC_SY355_.jpg",
+      "byUser": "Cedric",
+      "id": 6
     }
   ]
 }

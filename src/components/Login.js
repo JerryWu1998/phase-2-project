@@ -6,7 +6,8 @@ const Login = ({ onLogin }) => {
   const [signupUsername, setSignupUsername] = useState('');
   const [signupPassword, setSignupPassword] = useState('');
   const [error, setError] = useState('');
-  const [isSignupMode, setIsSignupMode] = useState(true); // State variable for signup mode
+  const [isSignupMode, setIsSignupMode] = useState(true);
+  const [sparkle, setSparkle] = useState(false);
 
   const handleLoginUsernameChange = (event) => {
     setLoginUsername(event.target.value);
@@ -96,7 +97,7 @@ const Login = ({ onLogin }) => {
 
         if (response.ok) {
           setError('')
-          window.alert("Sign Up successfully!")
+          window.alert("Signed Up successfully!")
           setSignupUsername('')
           setSignupPassword('')
         }
@@ -110,50 +111,72 @@ const Login = ({ onLogin }) => {
     <div id='loginJS'>
       {isSignupMode ? ( // Conditionally render based on the mode state variable
         <div>
-          <h1>Sign Up</h1>
-          {error && <p>{error}</p>}
+          <h1 className='login-header'>Sign Up</h1>
+          {error && <p className='login-error'>{error}</p>}
           <form onSubmit={handleSignup} className='form'>
             <input
               type="text"
               placeholder="Username"
               value={signupUsername}
               onChange={handleSignupUsernameChange}
+              className='login-input'
             />
             <input
               type="password"
               placeholder="Password"
               value={signupPassword}
               onChange={handleSignupPasswordChange}
+              className='login-input'
             />
-            <button type="submit">Sign Up</button>
+            <button
+              type="submit"
+              className={`login-button ${sparkle ? 'sparkle-animation' : ''}`}
+              onClick={() => setSparkle(true)}
+              onAnimationEnd={() => setSparkle(false)}
+            >Sign Up</button>
           </form>
-          <p>Already have an account? Log in{' '}
-            <span style={{ textDecoration: 'underline', cursor: 'pointer' }} onClick={handleModeToggle}>
+          <p className='switch-login'>Already have an account? Log in{' '}
+            <span
+              style={{ textDecoration: 'underline', cursor: 'pointer' }}
+              onClick={handleModeToggle}
+              className='login-here'
+            >
               here
             </span>
           </p>
         </div>
       ) : (
         <div>
-          <h1>Login</h1>
-          {error && <p>{error}</p>}
+          <h1 className='login-header'>Login</h1>
+          {error && <p className='login-error'>{error}</p>}
           <form onSubmit={handleLogin} className='form'>
             <input
               type="text"
               placeholder="Username"
               value={loginUsername}
               onChange={handleLoginUsernameChange}
+              className='login-input'
             />
             <input
               type="password"
               placeholder="Password"
               value={loginPassword}
               onChange={handleLoginPasswordChange}
+              className='login-input'
             />
-            <button type="submit">Login</button>
+            <button
+              type="submit"
+              className={`login-button ${sparkle ? 'sparkle-animation' : ''}`}
+              onClick={() => setSparkle(true)}
+              onAnimationEnd={() => setSparkle(false)}
+            >Login</button>
           </form>
-          <p>New user? Sign Up{' '}
-            <span style={{ textDecoration: 'underline', cursor: 'pointer' }} onClick={handleModeToggle}>
+          <p className='switch-login'>New user? Sign Up{' '}
+            <span
+              style={{ textDecoration: 'underline', cursor: 'pointer' }}
+              onClick={handleModeToggle}
+              className='login-here'
+            >
               here
             </span>
           </p>

@@ -5,7 +5,7 @@ import BuildWand from './BuildWand';
 import VirtualGreatHall from './VirtualGreatHall';
 
 function Profile({ user, onLogout, onUpdateHouse, onUpdateWand }) {
-  
+
   const history = useHistory();
   const { path, url } = useRouteMatch();
 
@@ -18,34 +18,25 @@ function Profile({ user, onLogout, onUpdateHouse, onUpdateWand }) {
     return null;
   }
 
+
   return (
     <div>
-      <nav>
-        <ul>
-          <li>
-            <Link to={`${url}`}>Profile</Link>
-          </li>
-          <li>
-            <Link to={`${url}/sorting-quiz`}>Sorting Quiz</Link>
-          </li>
-          <li>
-            <Link to={`${url}/build-wand`}>Build Your Wand</Link>
-          </li>
-          <li>
-            <Link to={`${url}/virtual-great-hall`}>Virtual Great Hall</Link>
-          </li>
-        </ul>
+      <nav className="navMenu">
+        <Link to={`${url}`}>My Profile</Link>
+        <Link to={`${url}/sorting-quiz`}>Sorting Quiz</Link>
+        <Link to={`${url}/build-wand`}>Build Wand</Link>
+        <Link to={`${url}/virtual-great-hall`}>Great Hall</Link>
       </nav>
 
       <Switch>
         <Route exact path={`${path}`}>
-          <div>
-            <h1>Profile</h1>
+          <div className='profileJS'>
+            <h1 >Profile</h1>
             <h2>Welcome, {user.username}!</h2>
             <p>Your House: {user.house}</p>
-            <img src={`${user.houseIcon}`} alt=""></img>
+            {user.houseIcon && <img className='profile-image' src={`${user.houseIcon}`} alt=""></img>}
             <p>Your Wand: {user.wand}</p>
-            <button onClick={handleLogout}>Logout</button>
+            <button onClick={handleLogout} className='login-button'>Logout</button>
           </div>
         </Route>
         <Route path={`${path}/sorting-quiz`}>
