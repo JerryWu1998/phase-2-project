@@ -385,13 +385,15 @@
           0
         ]
       },
-      "text": "The drum",
-      "points": [
-        100,
-        0,
-        0,
-        0
-      ]
+      "optionD": {
+        "text": "The drum",
+        "points": [
+          100,
+          0,
+          0,
+          0
+        ]
+      }
     },
     {
       "id": 12,
@@ -423,13 +425,15 @@
           100
         ]
       },
-      "text": "The Bold",
-      "points": [
-        100,
-        0,
-        0,
-        0
-      ]
+      "optionD": {
+        "text": "The Bold",
+        "points": [
+          100,
+          0,
+          0,
+          0
+        ]
+      }
     }
   ],
   "users": [
@@ -455,6 +459,26 @@
         "Eleven and a quarter inches, ",
         "Maple wood, ",
         "Unicorn Hair core "
+      ]
+    },
+    {
+      "id": 5,
+      "username": "Will L.",
+      "password": "password",
+      "houseIcon": "https://m.media-amazon.com/images/I/71oSYjldfjL._AC_SY355_.jpg",
+      "house": "Ravenclaw",
+      "wand": []
+    },
+    {
+      "id": 6,
+      "username": "Ammar",
+      "password": "password",
+      "houseIcon": "https://m.media-amazon.com/images/I/81BpIbsbaWL._AC_SX425_.jpg",
+      "house": "Gryffindor",
+      "wand": [
+        "Eleven and three quarter inches, ",
+        "Laurel wood, ",
+        "Phoenix Feather core "
       ]
     }
   ],
@@ -502,6 +526,20 @@
       "houseIcon": "https://m.media-amazon.com/images/I/81aLUsl0qeL._AC_SY355_.jpg",
       "byUser": "Cedric",
       "id": 6
+    },
+    {
+      "comment": "Can't wait for potions class!",
+      "house": "Ravenclaw",
+      "houseIcon": "https://m.media-amazon.com/images/I/71oSYjldfjL._AC_SY355_.jpg",
+      "byUser": "Will L.",
+      "id": 7
+    },
+    {
+      "comment": "@Will L. I'd take that back if I were you... Snape is a NIGHTMARE.",
+      "house": "Gryffindor",
+      "houseIcon": "https://m.media-amazon.com/images/I/81BpIbsbaWL._AC_SX425_.jpg",
+      "byUser": "Ammar",
+      "id": 8
     }
   ]
 }
